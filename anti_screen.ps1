@@ -1,6 +1,9 @@
 # =====================================================================
 # 希沃屏幕墙欺骗系统 (带深度日志调试版)
 # =====================================================================
+
+(Get-Process -Id $PID).PriorityClass = [System.Diagnostics.ProcessPriorityClass]::High # 获取高优先级，增强抢占能力
+
 $TargetDir = "C:\ProgramData\seewo\screenCapture\temp"
 $FakeImage = Join-Path $PSScriptRoot "Seewo_Fake_Screen.jpg"
 $LogFile   = Join-Path $PSScriptRoot "debug_screen.log"
